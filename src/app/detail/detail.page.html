@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar class="head" text-center>
+    <ion-buttons slot="start" class="back" *ngIf="role == 'Admin Kelas'">
+      <ion-back-button  defaultHref="tabs2/tabs2/tugas"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" class="back" *ngIf="role == 'Siswa'">
+      <ion-back-button  defaultHref="tabs/tabs/tugas"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Detail Tugas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-progress-bar type="indeterminate" *ngIf="!trigger2"></ion-progress-bar>
+
+<ion-content class="content">
+
+  <div class="now" *ngIf="trigger">
+  <ion-card class="card" *ngFor="let r of datas['data']">
+    <ion-item lines="none" class="now-header">
+      <ion-icon src="assets/icon/books.svg" slot="start" class="ico"></ion-icon>
+      <ion-label>{{r.mata_pelajaran['mata_pelajaran']}}</ion-label>
+   
+    </ion-item>
+  
+    <ion-card-header>
+        <ion-card-subtitle>Penjelasan Tugas</ion-card-subtitle> 
+  <ion-card-title>{{r.judul}}</ion-card-title>
+  
+</ion-card-header>
+    <ion-card-content class="card-content" >
+     {{r.deskripsi}}
+    </ion-card-content>
+
+    
+      <ion-item>
+       <ion-label> 
+        <ion-label class="lab">Deadline : {{r.deadline_date}} || {{r.deadline_time}}</ion-label> 
+        <ion-label class="lab">Guru : {{r.guru['nama']}}</ion-label> 
+      </ion-label>
+      </ion-item>
+
+
+   
+  </ion-card>
+</div>
+
+
+<div class="now" *ngIf="!trigger">
+  <ion-card class="card" *ngFor="let fake of fakes">
+    <ion-item lines="none" class="now-header">
+      <ion-icon src="assets/icon/books.svg" slot="start" class="ico"></ion-icon>
+      <ion-skeleton-text *ngIf="!trigger2" animated style="width: 50%"></ion-skeleton-text>
+      <ion-skeleton-text *ngIf="trigger2"  style="width: 50%"></ion-skeleton-text>
+   
+    </ion-item>
+  
+    <ion-card-header>
+        <ion-skeleton-text *ngIf="!trigger2" animated style="width: 30%"></ion-skeleton-text> 
+        <ion-skeleton-text *ngIf="trigger2"  style="width: 30%"></ion-skeleton-text> 
+        <ion-skeleton-text *ngIf="!trigger2" animated style="width: 50%"></ion-skeleton-text> 
+        <ion-skeleton-text *ngIf="trigger2"  style="width: 50%"></ion-skeleton-text> 
+  
+</ion-card-header>
+    <ion-skeleton-text  *ngIf="!trigger2" animated style="height:30%">
+      
+    </ion-skeleton-text>
+
+    <ion-skeleton-text *ngIf="trigger2" style="height:30%" >
+      
+    </ion-skeleton-text>
+
+    
+      <ion-item>
+       <ion-label> 
+        <ion-skeleton-text  *ngIf="!trigger2" animated style="width: 50%" class="lab"></ion-skeleton-text> 
+        <ion-skeleton-text  *ngIf="!trigger2" animated style="width: 30%" class="lab"></ion-skeleton-text> 
+        <ion-skeleton-text  *ngIf="trigger2" style="width: 50%" class="lab"></ion-skeleton-text> 
+        <ion-skeleton-text  *ngIf="trigger2" style="width: 30%" class="lab"></ion-skeleton-text> 
+     
+      </ion-label>
+      </ion-item>
+
+
+   
+  </ion-card>
+</div>
+
+
+
+</ion-content>

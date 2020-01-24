@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="head" text-center>
+    <ion-title class="header">Akun</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <div class="image-content" text-center>
+     <img src="assets/images/logo-single.png" class="image">
+    <div class="shadow"></div>
+    </div>
+
+    <div class="now">
+      <ion-card class="card">
+        <ion-item lines="none" class="now-header">
+          <ion-icon src="assets/icon/account2.svg" slot="start"></ion-icon>
+          <ion-label>Akun</ion-label>
+       
+        </ion-item>
+      
+        <ion-card-header>
+            <ion-card-subtitle>Profile Anda</ion-card-subtitle> 
+      <ion-card-title>{{nama}}</ion-card-title>
+      
+    </ion-card-header>
+        <ion-card-content class="card-content">
+            <ion-card-subtitle>Email</ion-card-subtitle> 
+            <ion-card-title class="value">{{email}}</ion-card-title>
+            <ion-card-subtitle>Password</ion-card-subtitle> 
+            <ion-card-title class="value">********</ion-card-title>
+            <ion-card-subtitle>Status</ion-card-subtitle> 
+            <ion-card-title class="value">{{role}}</ion-card-title>               
+        </ion-card-content>
+
+        <ion-button class="button" color="tertiary" shape="block" fill="outline" size="small" (click)="logout()">Sign Out</ion-button>
+
+      </ion-card>
+    </div>
+
+
+</ion-content>

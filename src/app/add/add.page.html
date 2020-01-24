@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-toolbar class="head" text-center>
+      <ion-title class="header" *ngIf="category == 'Tugas'">Tambah Tugas</ion-title>
+      <ion-title class="header" *ngIf="category == 'Kegiatan'">Tambah Kegiatan</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="content" >
+  
+    <div class="image-content">
+       <img src="assets/images/landing/banner.jpg" class="image">
+       <div class="shadow">
+          <div class="welcome-name" *ngIf="category == 'Tugas'">Tambah Tugas</div>
+          <div class="welcome-name" *ngIf="category == 'Kegiatan'">Tambah Kegiatan</div>
+          <div class="motto" *ngIf="category == 'Tugas'">Tugas Kelas{{nkelas}}</div>
+          <div class="motto" *ngIf="category == 'Kegiatan'">Kegiatan Kelas {{nkelas}}</div>
+     </div>
+    </div>
+  
+    <div class="now">
+    <ion-card class="card">
+      <ion-item lines="none" class="now-header">
+        <ion-icon src="assets/icon/add.svg" slot="start"></ion-icon>
+        <ion-label *ngIf="category == 'Tugas'">Form Tambah Tugas</ion-label>
+        <ion-label *ngIf="category == 'Kegiatan'">Form Tambah Kegiatan</ion-label>
+     
+      </ion-item>
+    
+      <ion-card-header>
+          <ion-card-subtitle>Isi Semua Form<a style="color:red;"> *</a></ion-card-subtitle> 
+  </ion-card-header>
+
+  <ion-item lines="none">
+    <ion-label>Kategori</ion-label>
+    
+
+    <ion-select placeholder="Pilih Kategori" [(ngModel)]="category" name="category">
+  
+      <ion-select-option value="Tugas">Tugas</ion-select-option>
+      <ion-select-option value="Kegiatan">Kegiatan</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+ 
+
+  <ion-item lines="none" *ngIf="category == 'Tugas'">
+    <ion-label>Mapel</ion-label>
+    <ion-select placeholder="Pilih Mapel" [(ngModel)]="mapel" name="mapel">
+  
+      <ion-select-option *ngFor="let a of gmapel" value="{{a._id}}">{{a.mata_pelajaran}}</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+  
+  <ion-item lines="none" *ngIf="category == 'Tugas'">
+    <ion-label>Guru</ion-label>
+    <ion-select placeholder="Pilih Guru" [(ngModel)]="guru" name="guru" >
+
+      <ion-select-option *ngFor="let a of gguru" value="{{a._id}}">{{a.nama}}</ion-select-option>
+  
+     
+    </ion-select>
+  </ion-item>
+
+  
+
+  <ion-item lines="none">
+    <ion-label>Deadline</ion-label>
+    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD/MMM/YYYY" placeholder="Tanggal" [(ngModel)]="date" (ionChange)="dateChanged($event)"></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" placeholder="Waktu" [(ngModel)]="time" (ionChange)="timeChanged($event)" ></ion-datetime>
+  </ion-item>
+
+
+  <ion-item lines="none" class="t1"> 
+    <ion-label position="floating">Judul</ion-label>
+    <ion-textarea  class="judul" [(ngModel)]="judul"></ion-textarea>
+  </ion-item>
+  
+    
+        <ion-item lines="none" class="t2">
+          <ion-label position="floating">Deskripsi</ion-label>
+          <ion-textarea rows="5" class="judul" [(ngModel)]="deskripsi"></ion-textarea>
+        </ion-item>
+      
+      <ion-button class="button" shape="block" fill="outline" color="tertiary" size="small" (click)="addTugas()" *ngIf="category == 'Tugas'">Tambah</ion-button>
+      <ion-button class="button" shape="block" fill="outline" color="tertiary" size="small" (click)="addKegiatan()" *ngIf="category == 'Kegiatan'">Tambah</ion-button>
+    </ion-card>
+  </div>
+  
+  
+  </ion-content>
+
+  <!-- <ion-content class="content" *ngIf="!trigger">
+
+  </ion-content> -->
+  

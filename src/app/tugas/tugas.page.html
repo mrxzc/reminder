@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar class="head" text-center>
+    <ion-title class="header" *ngIf="choose == 'Tugas'">Tugas</ion-title>
+    <ion-title class="header" *ngIf="choose == 'Kegiatan'">Kegiatan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-progress-bar *ngIf="!trigger2" type="indeterminate"></ion-progress-bar>
+
+<ion-content class="content">
+
+  
+
+  <div class="image-content">
+     <img src="assets/images/landing/tugas.jpg" class="image">
+     <div class="shadow">
+        <div class="welcome-name" *ngIf="choose == 'Tugas'">Tugas</div>
+        <div class="welcome-name" *ngIf="choose == 'Kegiatan'">Kegiatan</div>
+        <div class="motto" *ngIf="choose == 'Tugas'">Tugas Kelas {{nkelas}}</div>
+        <div class="motto" *ngIf="choose == 'Kegiatan'">Kegiatan Kelas {{nkelas}}</div>
+   </div>
+  </div>
+
+
+  <ion-item  class="select disable-hover">
+    <ion-label>Kategori</ion-label>
+    <ion-select placeholder="Pilih Kategori" [(ngModel)]="choose" name='choose' (ionChange)="click2()">
+      <ion-select-option value="Tugas">Tugas</ion-select-option>
+      <ion-select-option value="Kegiatan">Kegiatan</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <div class="now-header">
+    
+    <!-- *ngFor=" | slice:0:i"  -->
+    <!-- (click)="goToDetail(r._id)" -->
+   
+ </div>
+ 
+  <div class="now" *ngIf="trigger && choose == 'Tugas'" >
+     
+      <ion-list lines="full" class="now-list" *ngFor="let r of datas['data'] | slice:0:i" (click)="goToDetail(r._id)">
+          <ion-item class="now-item" >
+            <ion-label >
+              <div class="jam">
+                  <ion-label  class="b" >{{r.mata_pelajaran['mata_pelajaran']}}</ion-label>
+              </div>
+            
+            </ion-label>
+            <ion-label class="mapel">
+                <ion-label class="nama-mapel" >{{r.judul}}</ion-label>
+  
+                <ion-label class="ruang-mapel" >{{r.deskripsi}}</ion-label>
+              </ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list lines="none">
+        <div class="lihat">    
+            <div class="button-lihat">
+              <ion-grid class="ion-text-center">
+                <ion-row class="row">
+                  <ion-col size="0.5"></ion-col>
+                  <ion-col size="11">
+                      
+                      <ion-label class="lihat-text" color="primary" (click)="click()" *ngIf="i < datas['data']?.length && datas['data']?.length > 0">Lebih Banyak</ion-label>
+                      <ion-label class="lihat-text" color="primary"  *ngIf="i == datas['data']?.length"></ion-label>
+                      <ion-label class="lihat-text" color="dark"  *ngIf="datas['data']?.length == 0">Tidak Ada Tugas</ion-label>
+                  </ion-col>
+                  <ion-col size="0.5"></ion-col>
+                </ion-row>
+              </ion-grid>
+             
+            </div>
+          </div> 
+        </ion-list>
+</div>
+
+<div class="now" *ngIf="trigger && choose == 'Kegiatan'" >
+     
+  <ion-list lines="full" class="now-list" *ngFor="let g of datas3['data'] | slice:0:i" (click)="goToDetailKegiatan(g._id)">
+      <ion-item class="now-item" >
+        <ion-label >
+          <div class="jam">
+              <ion-label  class="b" >Kegiatan</ion-label>
+          </div>
+        
+        </ion-label>
+        <ion-label class="mapel">
+            <ion-label class="nama-mapel" >{{g.judul}}</ion-label>
+
+            <ion-label class="ruang-mapel" >{{g.deskripsi}}</ion-label>
+          </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list lines="none">
+    <div class="lihat">    
+        <div class="button-lihat">
+          <ion-grid class="ion-text-center">
+            <ion-row class="row">
+              <ion-col size="0.5"></ion-col>
+              <ion-col size="11">
+                  <ion-label class="lihat-text" color="primary" (click)="click()" *ngIf="i < datas3['data']?.length && datas['data']?.length > 0">Lebih Banyak</ion-label>
+                  <ion-label class="lihat-text" color="primary"  *ngIf="i == datas3['data']?.length"></ion-label>
+                  <ion-label class="lihat-text" color="dark"  *ngIf="datas3['data']?.length == 0">Tidak Ada Kegiatan</ion-label>
+              </ion-col>
+              <ion-col size="0.5"></ion-col>
+            </ion-row>
+          </ion-grid>
+         
+        </div>
+      </div> 
+    </ion-list>
+</div>
+
+<div class="now" *ngIf="!trigger">
+   
+    <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+        <ion-item class="now-item">
+          <ion-label>
+            <div class="jam2">
+                <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 90%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="b" style="width: 90%"></ion-skeleton-text>
+            </div>
+          
+          </ion-label>
+          <ion-label class="mapel">
+              <ion-skeleton-text *ngIf="!trigger2"  animated style="width: 60%" class="nama-mapel"></ion-skeleton-text>
+
+              <ion-skeleton-text *ngIf="trigger2" style="width: 60%" class="nama-mapel"></ion-skeleton-text>
+
+              <ion-skeleton-text *ngIf="!trigger2" animated style="width: 80%" class="ruang-mapel"></ion-skeleton-text>
+
+              <ion-skeleton-text  *ngIf="trigger2" style="width: 80%" class="ruang-mapel"></ion-skeleton-text>
+
+            </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+      <div class="lihat">    
+          <div class="button-lihat">
+            <ion-grid class="ion-text-center">
+              <ion-row class="row">
+                <ion-col size="0.5"></ion-col>
+                <ion-col size="11">
+                    <ion-label class="lihat-text" color="primary">Lebih Banyak</ion-label>
+                </ion-col>
+                <ion-col size="0.5"></ion-col>
+              </ion-row>
+            </ion-grid>
+           
+          </div>
+        </div> 
+      </ion-list>
+</div>
+
+
+</ion-content>
+
+
+

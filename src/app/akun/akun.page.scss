@@ -1,0 +1,87 @@
+
+.content{
+    --ion-background-color:#ecebeb !important;
+}
+.head{
+    --ion-background-color: #6A50A7;
+    color:#ffffff;
+    font-size: 10px;
+}
+.header{
+     font-size: 14px;
+}
+
+.image{
+
+    position: relative;
+    margin-top: 0px;
+    background: transparent  !important;
+}
+
+.name{
+    position: relative;
+    font-size: 32px;
+    margin-top: 20px;
+    left: 5%;
+    font-weight: bold;
+
+}
+
+.shadow{
+    position: absolute;
+    height: 200px;
+    width: 50%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgb(255, 255, 255) 100%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    left: 25%;
+    top: 5px;
+    margin-bottom: 20px;
+}
+
+
+.now-header{
+    --ion-background-color:  #6A50A7;
+    color: #ffffff;
+  }
+  
+ 
+ 
+ .now{
+     position: relative;
+     background-color: #ffffff !important;
+     color: black;
+     top: 30px;
+     font-size: 12px;
+     font-weight: bold;
+     width: 90%;
+     left: 5%;
+     margin-bottom: 30px;
+     
+ }
+ .card{
+     padding: 0px 0px 0px 0px;
+     margin: 0px 0px 0px 0px;
+     --ion-background-color : #ffffff !important;
+ }
+ 
+ .card-content{
+     --ion-background-color:  #ffffff !important;
+ }
+ .item{
+     padding:none;
+ }
+
+ .value{
+     font-size: 16px;
+     margin-bottom: 10px;
+ }
+ .button{
+    width: 40%;
+    position: relative;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    --ion-button-color: #6A50A7;
+}
+ 
+ 

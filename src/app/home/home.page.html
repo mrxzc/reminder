@@ -1,14 +1,127 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="content" >
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <div class="page-content">
+      <img class="image" src="assets/images/landing/welcome.png">
+      <div class="logo-temp"></div>
+      <img class="logo" src="assets/images/logo-single.png">
+      <div class="button" >
+        <ion-label class="text-button" (click)="goToSaya()">AKUN SAYA</ion-label>
+      </div>
+      <div class="shadow">
+           <div class="welcome-name">Selamat Pagi, {{name}}!</div>
+           <div class="motto">Salam sukses untuk kamu</div>
+      </div>
+    </div>
+
+    <div class="menu">
+       <ion-grid class="ion-text-center">
+         <ion-row>
+           <ion-col size="4">
+             <img (click)="goToTugas()" src="assets/images/box-menu/tugas.jpg" class="menu-icon">
+           </ion-col>
+           <ion-col size="4">
+              <img (click)="goToJadwal()" src="assets/images/box-menu/jadwal-pelajaran.jpg" class="menu-icon">
+           </ion-col>
+           <ion-col size="4">
+              <img (click)="goToSaya()" src="assets/images/box-menu/saya.jpg" class="menu-icon">
+           </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col size="4">
+             <ion-label class="menu-text">Tugas</ion-label>
+            </ion-col>
+            <ion-col size="4">
+                <ion-label class="menu-text">Jadwal</ion-label>
+            </ion-col>
+            <ion-col size="4">
+                <ion-label class="menu-text">Saya</ion-label>
+            </ion-col>
+          </ion-row>
+       </ion-grid>
+    </div>
+   
+
+    <div class="now-header">
+         <ion-label class="now-title">PELAJARAN HARI INI</ion-label>
+    </div>
+
+    <div class="now" *ngIf="trigger">
+       
+      
+       
+        
+              <ion-list lines="full" class="now-list"  *ngFor="let r of datas.data">
+                  <ion-item class="now-item">
+                    <ion-label class="jam">
+                      <ion-label class="b" >{{r.jam_mulai[0]}}{{r.jam_mulai[1]}}{{r.jam_mulai[2]}}{{r.jam_mulai[3]}}{{r.jam_mulai[4]}}</ion-label>
+                      <ion-label class="a" >{{r.jam_selesai[0]}}{{r.jam_selesai[1]}}{{r.jam_selesai[2]}}{{r.jam_selesai[3]}}{{r.jam_selesai[4]}}</ion-label>
+                    </ion-label>
+                    <ion-label class="mapel">
+                        <ion-label class="nama-mapel">{{r.mata_pelajaran}}</ion-label>
+                        <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                        </ion-icon>
+                        <ion-label class="ruang-mapel">{{r.guru}}</ion-label>
+                      </ion-label>
+                  </ion-item>
+                </ion-list>
+                <ion-list lines="none">
+                <div class="lihat">    
+                    <div class="button-lihat">
+                      <ion-grid class="ion-text-center">
+                        <ion-row class="row">
+                          <ion-col size="0.5"></ion-col>
+                          <ion-col size="11">
+                              <ion-label class="lihat-text" (click)="goToJadwal()">JADWAL SELENGKAPNYA</ion-label>
+                          </ion-col>
+                          <ion-col size="0.5"></ion-col>
+                        </ion-row>
+                      </ion-grid>
+                     
+                    </div>
+                  </div> 
+                </ion-list>
+    </div>
+
+     <div class="now" *ngIf="!trigger">
+        <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+            <ion-item class="now-item">
+              <ion-label class="jam">
+                <ion-skeleton-text *ngIf="!trigger2" animated style="width: 20%" class="b"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="!trigger2" animated style="width: 20%" class="a"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" style="width: 20%" class="b"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" style="width: 20%" class="a"></ion-skeleton-text>
+              </ion-label>
+              <ion-label class="mapel">
+                  <ion-skeleton-text *ngIf="!trigger2" animated style="width: 90%" class="nama-mapel"></ion-skeleton-text>
+                  <ion-skeleton-text *ngIf="trigger2" style="width: 90%" class="nama-mapel"></ion-skeleton-text>
+                  <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                  </ion-icon>
+                  <ion-skeleton-text *ngIf="!trigger2" animated style="width: 60%" class="ruang-mapel"></ion-skeleton-text>
+                  <ion-skeleton-text *ngIf="trigger2" style="width: 60%" class="ruang-mapel"></ion-skeleton-text>
+                </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none">
+          <div class="lihat">    
+              <div class="button-lihat">
+                <ion-grid class="ion-text-center">
+                  <ion-row class="row">
+                    <ion-col size="0.5"></ion-col>
+                    <ion-col size="11">
+                        <ion-label class="lihat-text" (click)="goToJadwal()">JADWAL SELENGKAPNYA</ion-label>
+                    </ion-col>
+                    <ion-col size="0.5"></ion-col>
+                  </ion-row>
+                </ion-grid>
+               
+              </div>
+            </div> 
+          </ion-list>
+</div>
+
+
+    <!-- <div class="button-lihat">
+     dsa
+    </div> -->
+  
 </ion-content>

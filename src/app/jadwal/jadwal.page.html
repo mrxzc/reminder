@@ -1,0 +1,352 @@
+<ion-header>
+    <ion-toolbar class="head" text-center>
+      <ion-title class="header">Jadwal Pelajaran</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-progress-bar *ngIf="!trigger2" type="indeterminate"></ion-progress-bar>
+  
+<ion-content class="content" *ngIf="trigger">
+
+   <div>  
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Senin</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>   
+     </div>
+             <ion-list lines="full" class="now-list" *ngFor="let a of datas.Senin">
+                 <ion-item class="now-item">
+                   <ion-label class="jam">
+                     <ion-label class="b" >{{a.jam_mulai[0]}}{{a.jam_mulai[1]}}{{a.jam_mulai[2]}}{{a.jam_mulai[3]}}{{a.jam_mulai[4]}}</ion-label>
+                     <ion-label class="a">{{a.jam_selesai[0]}}{{a.jam_selesai[1]}}{{a.jam_selesai[2]}}{{a.jam_selesai[3]}}{{a.jam_selesai[4]}}</ion-label>
+                   </ion-label>
+                   <ion-label class="mapel">
+                       <ion-label class="nama-mapel">{{a.mata_pelajaran}}</ion-label>
+                       <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                       </ion-icon>
+                       <ion-label class="ruang-mapel">{{a.guru}}</ion-label>
+                     </ion-label>
+                 </ion-item>
+               </ion-list>
+               <ion-list lines="none">
+               <div class="lihat">    
+                 </div> 
+               </ion-list>
+   </div>
+ 
+   <div>
+     
+    <div class="now-header" text-center>
+        <ion-grid>
+          <ion-row class="row-hari">
+            <ion-col size="4"></ion-col>
+            <ion-col size="4"><ion-label class="now-title">Selasa</ion-label></ion-col>
+            <ion-col size="4"></ion-col>
+          </ion-row>
+        </ion-grid>
+          
+     </div>
+
+          <ion-list lines="full" class="now-list" *ngFor="let b of datas.Selasa">
+            <ion-item class="now-item">
+              <ion-label class="jam">
+                <ion-label class="b" >{{b.jam_mulai[0]}}{{b.jam_mulai[1]}}{{b.jam_mulai[2]}}{{b.jam_mulai[3]}}{{b.jam_mulai[4]}}</ion-label>
+                <ion-label class="a">{{b.jam_selesai[0]}}{{b.jam_selesai[1]}}{{b.jam_selesai[2]}}{{b.jam_selesai[3]}}{{b.jam_selesai[4]}}</ion-label>
+              </ion-label>
+              <ion-label class="mapel">
+                  <ion-label class="nama-mapel">{{b.mata_pelajaran}}</ion-label>
+                  <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                  </ion-icon>
+                  <ion-label class="ruang-mapel">{{b.guru}}</ion-label>
+                </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none">
+          <div class="lihat">    
+            </div> 
+          </ion-list>
+   </div>
+
+   <div>
+     
+    <div class="now-header" text-center>
+        <ion-grid>
+          <ion-row class="row-hari">
+            <ion-col size="4"></ion-col>
+            <ion-col size="4"><ion-label class="now-title">Rabu</ion-label></ion-col>
+            <ion-col size="4"></ion-col>
+          </ion-row>
+        </ion-grid>
+          
+     </div>
+
+          <ion-list lines="full" class="now-list" *ngFor="let c of datas.Rabu">
+            <ion-item class="now-item">
+              <ion-label class="jam">
+                <ion-label class="b">{{c.jam_mulai[0]}}{{c.jam_mulai[1]}}{{c.jam_mulai[2]}}{{c.jam_mulai[3]}}{{c.jam_mulai[4]}}</ion-label>
+                <ion-label class="a">{{c.jam_selesai[0]}}{{c.jam_selesai[1]}}{{c.jam_selesai[2]}}{{c.jam_selesai[3]}}{{c.jam_selesai[4]}}</ion-label>
+                 </ion-label>
+              <ion-label class="mapel">
+                  <ion-label class="nama-mapel">{{c.mata_pelajaran}}</ion-label>
+                  <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                  </ion-icon>
+                  <ion-label class="ruang-mapel">{{c.guru}}</ion-label>
+                </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none">
+          <div class="lihat">    
+            </div> 
+          </ion-list>
+   </div>
+
+    
+   <div>
+     
+    <div class="now-header" text-center>
+        <ion-grid>
+          <ion-row class="row-hari">
+            <ion-col size="4"></ion-col>
+            <ion-col size="4"><ion-label class="now-title">Kamis</ion-label></ion-col>
+            <ion-col size="4"></ion-col>
+          </ion-row>
+        </ion-grid>
+          
+     </div>
+
+          <ion-list lines="full" class="now-list" *ngFor="let d of datas.Kamis">
+            <ion-item class="now-item">
+              <ion-label class="jam">
+                <ion-label class="b" >{{d.jam_mulai[0]}}{{d.jam_mulai[1]}}{{d.jam_mulai[2]}}{{d.jam_mulai[3]}}{{d.jam_mulai[4]}}</ion-label>
+                <ion-label class="a">{{d.jam_selesai[0]}}{{d.jam_selesai[1]}}{{d.jam_selesai[2]}}{{d.jam_selesai[3]}}{{d.jam_selesai[4]}}</ion-label>
+                </ion-label>
+              <ion-label class="mapel">
+                  <ion-label class="nama-mapel">{{d.mata_pelajaran}}</ion-label>
+                  <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                  </ion-icon>
+                  <ion-label class="ruang-mapel">{{d.guru}}</ion-label>
+                </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none">
+          <div class="lihat">    
+            </div> 
+          </ion-list>
+   </div>
+
+   <div>
+     
+    <div class="now-header" text-center>
+        <ion-grid>
+          <ion-row class="row-hari">
+            <ion-col size="4"></ion-col>
+            <ion-col size="4"><ion-label class="now-title">Jumat</ion-label></ion-col>
+            <ion-col size="4"></ion-col>
+          </ion-row>
+        </ion-grid>
+          
+     </div>
+
+          <ion-list lines="full" class="now-list" *ngFor="let e of datas.Jumat">
+            <ion-item class="now-item">
+              <ion-label class="jam">
+                <ion-label class="b">{{e.jam_mulai[0]}}{{e.jam_mulai[1]}}{{e.jam_mulai[2]}}{{e.jam_mulai[3]}}{{e.jam_mulai[4]}}</ion-label>
+                <ion-label class="a">{{e.jam_selesai[0]}}{{e.jam_selesai[1]}}{{e.jam_selesai[2]}}{{e.jam_selesai[3]}}{{e.jam_selesai[4]}}</ion-label>
+             </ion-label>
+              <ion-label class="mapel">
+                  <ion-label class="nama-mapel">{{e.mata_pelajaran}}</ion-label>
+                  <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start">                      
+                  </ion-icon>
+                  <ion-label class="ruang-mapel">{{e.guru}}</ion-label>
+                </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list lines="none">
+          <div class="lihat">    
+            </div> 
+          </ion-list>
+   </div>
+
+</ion-content>
+
+
+<ion-content class="content" *ngIf="!trigger">
+   
+  <div>
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Senin</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+
+
+            <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+                <ion-item class="now-item">
+                  <ion-label class="jam">
+                    <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 20%"></ion-skeleton-text>
+                    <ion-skeleton-text *ngIf="!trigger2" class="a" animated style="width: 20%"></ion-skeleton-text>
+                    <ion-skeleton-text *ngIf="trigger2" class="b"  style="width: 20%"></ion-skeleton-text>
+                    <ion-skeleton-text *ngIf="trigger2" class="a"  style="width: 20%"></ion-skeleton-text>
+                  </ion-label>
+                  <ion-label class="mapel">
+                      <ion-skeleton-text *ngIf="!trigger2" class="nama-mapel" animated style="width: 90%"></ion-skeleton-text>
+                      <ion-skeleton-text *ngIf="trigger2" class="nama-mapel" style="width: 90%"></ion-skeleton-text>
+                      <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start"></ion-icon>
+                      <ion-skeleton-text *ngIf="!trigger2" class="ruang-mapel" animated style="width: 60%"></ion-skeleton-text>
+                      <ion-skeleton-text *ngIf="trigger2" class="ruang-mapel" style="width: 60%"></ion-skeleton-text>
+                  </ion-label>
+                </ion-item>
+            </ion-list>
+            <ion-list lines="none">
+            <div class="lihat"></div> 
+            </ion-list>
+  </div>
+
+
+  <div>
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Selasa</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+
+
+      <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+          <ion-item class="now-item">
+            <ion-label class="jam">
+              <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="!trigger2" class="a" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="b"  style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="a"  style="width: 20%"></ion-skeleton-text>
+            </ion-label>
+            <ion-label class="mapel">
+                <ion-skeleton-text *ngIf="!trigger2" class="nama-mapel" animated style="width: 90%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="nama-mapel" style="width: 90%"></ion-skeleton-text>
+                <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start"></ion-icon>
+                <ion-skeleton-text *ngIf="!trigger2" class="ruang-mapel" animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="ruang-mapel" style="width: 60%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+      </ion-list>
+            <ion-list lines="none">
+            <div class="lihat"></div> 
+            </ion-list>
+  </div>
+
+
+  <div>
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Rabu</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+
+
+      <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+          <ion-item class="now-item">
+            <ion-label class="jam">
+              <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="!trigger2" class="a" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="b"  style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="a"  style="width: 20%"></ion-skeleton-text>
+            </ion-label>
+            <ion-label class="mapel">
+                <ion-skeleton-text *ngIf="!trigger2" class="nama-mapel" animated style="width: 90%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="nama-mapel" style="width: 90%"></ion-skeleton-text>
+                <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start"></ion-icon>
+                <ion-skeleton-text *ngIf="!trigger2" class="ruang-mapel" animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="ruang-mapel" style="width: 60%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+      </ion-list>
+            <ion-list lines="none">
+            <div class="lihat"></div> 
+            </ion-list>
+  </div>
+
+
+  <div>
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Kamis</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+
+
+      <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+          <ion-item class="now-item">
+            <ion-label class="jam">
+              <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="!trigger2" class="a" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="b"  style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="a"  style="width: 20%"></ion-skeleton-text>
+            </ion-label>
+            <ion-label class="mapel">
+                <ion-skeleton-text *ngIf="!trigger2" class="nama-mapel" animated style="width: 90%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="nama-mapel" style="width: 90%"></ion-skeleton-text>
+                <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start"></ion-icon>
+                <ion-skeleton-text *ngIf="!trigger2" class="ruang-mapel" animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="ruang-mapel" style="width: 60%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+      </ion-list>
+            <ion-list lines="none">
+            <div class="lihat"></div> 
+            </ion-list>
+  </div>
+
+
+  <div>
+      <div class="now-header" text-center>
+          <ion-grid>
+            <ion-row class="row-hari">
+              <ion-col size="4"></ion-col>
+              <ion-col size="4"><ion-label class="now-title">Jumat</ion-label></ion-col>
+              <ion-col size="4"></ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+
+
+      <ion-list lines="full" class="now-list" *ngFor="let fake of fakes">
+          <ion-item class="now-item">
+            <ion-label class="jam">
+              <ion-skeleton-text *ngIf="!trigger2" class="b" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="!trigger2" class="a" animated style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="b"  style="width: 20%"></ion-skeleton-text>
+              <ion-skeleton-text *ngIf="trigger2" class="a"  style="width: 20%"></ion-skeleton-text>
+            </ion-label>
+            <ion-label class="mapel">
+                <ion-skeleton-text *ngIf="!trigger2" class="nama-mapel" animated style="width: 90%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="nama-mapel" style="width: 90%"></ion-skeleton-text>
+                <ion-icon class="mapel-icon" src="assets/icon/manager.svg" slot="start"></ion-icon>
+                <ion-skeleton-text *ngIf="!trigger2" class="ruang-mapel" animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text *ngIf="trigger2" class="ruang-mapel" style="width: 60%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+      </ion-list>
+            <ion-list lines="none">
+            <div class="lihat"></div> 
+            </ion-list>
+  </div>
+
+</ion-content>

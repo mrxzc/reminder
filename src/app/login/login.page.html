@@ -1,0 +1,36 @@
+
+
+<ion-content class="content" text-center>
+
+        <img src="assets/images/logo-single.png" class="image">
+        
+      
+   
+  <ion-item class="input">
+      <ion-label position="floating">
+          <ion-icon slot="start" name="person"></ion-icon>
+          Email
+  </ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item  class="input2">
+        <ion-label position="floating">
+            <ion-icon slot="start" name="lock"></ion-icon>
+            Password
+        </ion-label>
+        <ion-input  type="password" name="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <div class="button" text-center (click)="SignIn()">
+        <ion-label class="text">SIGN IN</ion-label>
+      </div>
+
+      <div class="create" text-center>
+        <ion-label class="text2" (click)="goToRegister()">Create Account</ion-label>
+      </div>
+
+ 
+</ion-content>
+<img src="assets/images/wave/wave1.png" class="footer-img">
+ 
